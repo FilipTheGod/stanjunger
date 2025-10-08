@@ -1,0 +1,36 @@
+import { Resend } from "resend"
+import { NextResponse } from "next/server"
+import WeddingInvitation from "../../../../emails/wedding-invitation"
+
+const resend = new Resend(process.env.RESEND_API_KEY)
+
+export async function POST(request: Request) {
+  try {
+    const { recipients } = await request.json()
+
+    // Send emails one by one to stay within rate limits
+    const results = []
+
+    for (const email of recipients) {
+      const { data, error } = await resend.emails.send({
+        from: "Ines & Filip <onboarding@resend.dev>", // Update this with your verified domain
+        to: [email],
+        subject: "you're invited to our wedding!",
+        react: WeddingInvitation(),
+      })
+
+      if (error) {
+        results.push({ email, success: false, error })
+      } else {
+        results.push({ email, success: true, data })
+      }
+
+      // Add a small delay between emails to avoid rate limiting
+      await new Promise((resolve) => setTimeout(resolve, 100))
+    }
+
+    return NextResponse.json({ results })
+  } catch (error) {
+    return NextResponse.json({ error }, { status: 500 })
+  }
+}
