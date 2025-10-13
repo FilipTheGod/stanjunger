@@ -132,5 +132,3 @@ const subFooter = {
   marginTop: '8px',
   textTransform: 'lowercase' as const,
 };
-
-

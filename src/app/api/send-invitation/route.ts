@@ -1,7 +1,8 @@
-
 import WeddingInvitation from "../../../../emails/wedding-invitation"
-import { Resend } from 'resend';
-import { NextResponse } from 'next/server';
+import { Resend } from "resend"
+import { NextResponse } from "next/server"
+
+
 const resend = new Resend(process.env.RESEND_API_KEY);
 
 export async function POST(request: Request) {
@@ -9,7 +10,7 @@ export async function POST(request: Request) {
     const { to } = await request.json();
 
     const { data, error } = await resend.emails.send({
-      from: 'Ines & Filip <hello@mail.stanjunger.wedding>',
+      from: 'Ines & Filip <hello@stanjunger.wedding>',
       to: [to],
       subject: 'you\'re invited to our wedding!',
       react: WeddingInvitation(),
