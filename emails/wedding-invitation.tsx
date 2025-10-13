@@ -16,44 +16,31 @@ export default function WeddingInvitation() {
       <Head />
       <Body style={main}>
         <Container style={container}>
-          {/* Cat Image */}
+          {/* Top text */}
+          <Section style={topSection}>
+            <Text style={topText}>we're getting married!</Text>
+          </Section>
+
+          {/* Save the date image with cat */}
           <Section style={imageSection}>
             <Img
-              src="https://stanjunger.wedding/cat.jpg"
-              width="90"
-              height="120"
-              alt="Cat illustration"
-              style={catImage}
+              src="../public/save-the-date.png"
+              width="400"
+              alt="Save the date"
+              style={saveTheDateImage}
             />
           </Section>
 
-          {/* Main Content */}
-          <Section style={content}>
-            <Text style={heading}>you're invited!</Text>
+          {/* Names and details */}
+          <Section style={detailsSection}>
+            <Text style={names}>ines & filip</Text>
+            <Text style={date}>29.08.2026</Text>
+            <Text style={location}>prod, romania</Text>
+          </Section>
 
-            <Text style={paragraph}>
-              we're getting married and we'd love for you to join us for our
-              celebration!
-            </Text>
-
-            <Text style={paragraph}>
-              please click below to view your invitation with all the details
-              about our special day.
-            </Text>
-
-            {/* CTA Button */}
-            <Section style={buttonContainer}>
-              <Button
-                style={button}
-                href="https://www.paperlesspost.com/go/nkkpGZ7sW5jaajSJLzbZK?utm_content=view_card&utm_source=cof&utm_medium=email&utm_campaign=customizable_invitation&guestToken=preview95393ac2fbed7825e044abdb1b6a181d"
-              >
-                view invitation
-              </Button>
-            </Section>
-
-            <Text style={footer}>— ines & filip :)</Text>
-
-            <Text style={subFooter}>august 29th, 2026 · prod, romania</Text>
+          {/* Bottom text */}
+          <Section style={bottomSection}>
+            <Text style={bottomText}>formal invitation to follow</Text>
           </Section>
         </Container>
       </Body>
@@ -65,73 +52,79 @@ const main = {
   backgroundColor: "#ffffff",
   fontFamily:
     'Montserrat, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif',
+  padding: "40px 20px",
 }
 
 const container = {
   margin: "0 auto",
-  padding: "40px 20px",
   maxWidth: "600px",
+  backgroundColor: "#f9f9f9",
+  padding: "60px 40px",
+}
+
+const topSection = {
+  textAlign: "center" as const,
+  marginBottom: "40px",
+}
+
+const topText = {
+  fontSize: "18px",
+  fontWeight: "200",
+  color: "#666666",
+  fontStyle: "italic",
+  margin: "0",
 }
 
 const imageSection = {
   textAlign: "center" as const,
-  marginBottom: "32px",
+  marginBottom: "40px",
 }
 
-const catImage = {
+const saveTheDateImage = {
   margin: "0 auto",
+  maxWidth: "100%",
+  height: "auto",
 }
 
-const content = {
+const detailsSection = {
   textAlign: "center" as const,
+  marginBottom: "60px",
 }
 
-const heading = {
-  fontSize: "28px",
-  fontWeight: "200",
-  color: "#4b5563",
-  marginBottom: "24px",
-  textTransform: "lowercase" as const,
-}
-
-const paragraph = {
+const names = {
   fontSize: "16px",
-  fontWeight: "200",
-  color: "#6b7280",
-  lineHeight: "1.6",
-  marginBottom: "20px",
-  textTransform: "lowercase" as const,
+  fontWeight: "400",
+  color: "#333333",
+  letterSpacing: "2px",
+  textTransform: "uppercase" as const,
+  margin: "0 0 12px 0",
 }
 
-const buttonContainer = {
-  margin: "32px 0",
-}
-
-const button = {
-  backgroundColor: "#4b5563",
-  borderRadius: "6px",
-  color: "#ffffff",
-  fontSize: "16px",
-  fontWeight: "200",
-  textDecoration: "none",
-  textAlign: "center" as const,
-  display: "inline-block",
-  padding: "14px 32px",
-  textTransform: "lowercase" as const,
-}
-
-const footer = {
-  fontSize: "16px",
-  fontWeight: "200",
-  color: "#6b7280",
-  marginTop: "40px",
-  textTransform: "lowercase" as const,
-}
-
-const subFooter = {
+const date = {
   fontSize: "14px",
   fontWeight: "200",
-  color: "#9ca3af",
-  marginTop: "8px",
-  textTransform: "lowercase" as const,
+  color: "#666666",
+  margin: "0 0 4px 0",
+}
+
+const location = {
+  fontSize: "14px",
+  fontWeight: "200",
+  color: "#666666",
+  textTransform: "uppercase" as const,
+  letterSpacing: "1px",
+  margin: "0",
+}
+
+const bottomSection = {
+  textAlign: "center" as const,
+}
+
+const bottomText = {
+  fontSize: "12px",
+  fontWeight: "200",
+  color: "#999999",
+  textTransform: "uppercase" as const,
+  letterSpacing: "2px",
+  margin: "0",
 }
