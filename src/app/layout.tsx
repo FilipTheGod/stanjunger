@@ -9,7 +9,7 @@ const montserrat = Montserrat({
 
 export const metadata: Metadata = {
   title: "Ines & Filip - Save the Date",
-  description: "",
+  description: "Ines & Filip wedding website",
 };
 
 export default function RootLayout({
