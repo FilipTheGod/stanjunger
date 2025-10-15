@@ -9,6 +9,16 @@ const montserrat = Montserrat({
 
 export const metadata: Metadata = {
   title: "ines & filip's wedding website",
+  openGraph: {
+    title: "ines & filip's wedding website",
+    url: "https://stanjunger.wedding",
+    siteName: "ines & filip's wedding website",
+    type: "website",
+  },
+  twitter: {
+    card: "summary",
+    title: "ines & filip's wedding website",
+  },
 }
 
 export default function RootLayout({
