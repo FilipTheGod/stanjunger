@@ -13,6 +13,17 @@ export async function POST(request: Request) {
       to: [to],
       subject: "save the date!",
       react: WeddingInvitation(),
+      // Enable click tracking with tags
+      tags: [
+        {
+          name: "category",
+          value: "wedding_invitation"
+        },
+        {
+          name: "recipient",
+          value: to
+        }
+      ]
     })
 
     if (error) {

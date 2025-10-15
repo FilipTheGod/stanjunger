@@ -16,6 +16,21 @@ export async function POST(request: Request) {
         to: [email],
         subject: "save the date!",
         react: WeddingInvitation(),
+        // Enable click tracking with tags
+        tags: [
+          {
+            name: "category",
+            value: "wedding_invitation"
+          },
+          {
+            name: "recipient",
+            value: email
+          },
+          {
+            name: "batch",
+            value: new Date().toISOString().split('T')[0] // Date of sending
+          }
+        ]
       })
 
       if (error) {
