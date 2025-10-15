@@ -19,7 +19,7 @@ export async function POST(request: Request) {
         to: [email],
         subject: "save the date!",
         react: WeddingInvitation(),
-        // Enable click tracking with tags
+        // Enable open tracking with tags
         tags: [
           {
             name: "category",
