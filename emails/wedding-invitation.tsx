@@ -100,7 +100,6 @@ const heading = {
  fontSize: "16px",
   fontWeight: "200",
   color: "#000000",
-  marginTop: "0px",
   marginBottom: "50px",
   textTransform: "lowercase" as const,
 }
