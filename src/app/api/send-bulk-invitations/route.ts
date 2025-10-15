@@ -12,9 +12,9 @@ export async function POST(request: Request) {
 
     for (const email of recipients) {
       const { data, error } = await resend.emails.send({
-        from: "Ines & Filip <hello@stanjunger.wedding>",
+        from: "ines & filip <hello@stanjunger.wedding>",
         to: [email],
-        subject: "you're invited to our wedding!",
+        subject: "save the date!",
         react: WeddingInvitation(),
       })
 

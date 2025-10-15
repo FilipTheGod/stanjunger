@@ -6,6 +6,9 @@ import {
   Img,
   Section,
   Text,
+  Link,
+  Row,
+  Column,
 } from "@react-email/components"
 import * as React from "react"
 
@@ -15,44 +18,62 @@ export default function WeddingInvitation() {
       <Head />
       <Body style={main}>
         <Container style={container}>
-          {/* Cat Image */}
-          <Section style={imageSection}>
-            <Img
-              src="https://stanjunger.wedding/cat.jpg"
-              width="90"
-              height="120"
-              alt="Cat illustration"
-              style={catImage}
-            />
-          </Section>
-
           {/* Main Content */}
           <Section style={content}>
-            <Text style={heading}>you're invited!</Text>
-
-            <Text style={paragraph}>
-              we're getting married and we'd love for you to join us for our
-              celebration!
-            </Text>
-
-            <Text style={paragraph}>
-              please see the save the dates below with all the details about our
-              special days.
-            </Text>
-
             {/* Invitation PDF/Image */}
-            <Section style={invitationSection}>
-              <Img
-                src="https://stanjunger.wedding/invitation.jpg"
-                width="500"
-                alt="Wedding invitation"
-                style={invitationImage}
-              />
+            <Section style={detailsContainer}>
+              <table style={detailsTable} cellPadding="0" cellSpacing="0">
+                <tbody>
+                  <tr>
+                    <td style={detailCellLeft}>
+                      <Text style={heading}>you've got plans!</Text>
+                      <Text style={paragraph}>
+                        {" "}
+                        we'd love to celebrate our wedding with you! until we
+                        share more details in the upcoming formal invitations,
+                        please see our save the date card below and mark your
+                        calendar.
+                      </Text>
+                      <Section style={invitationSection}>
+                        <Img
+                          src="https://stanjunger.wedding/invitation.jpg"
+                          width="500"
+                          alt="Wedding invitation"
+                          style={invitationImage}
+                        />
+                      </Section>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
             </Section>
 
-            <Text style={footer}>— ines & filip :)</Text>
+            {/* Website Link */}
+            <Section style={linkSection}>
+              <Text style={paragraph}>our wedding website is up and running!</Text>
+              <Text style={linkText}>
+                <Link href="https://stanjunger.wedding" style={websiteLink}>
+                  stanjunger.wedding
+                </Link>
+              </Text>
+               <Text style={paragraph}>
+              feel free to check back in the coming months for updates and
+              information.
+            </Text>
+            </Section>
 
-            <Text style={subFooter}>august 29th, 2026 · prod, romania</Text>
+            {/* Footer with Date and Calendar */}
+            <Section style={footerSection}>
+              <Text style={footerDate}>saturday, august 29, 2026</Text>
+              <Text style={footerCalendar}>
+                <Link
+                  href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=stan-junger+wedding&dates=20260829/20260830&&location=Prod%2C+Romania"
+                  style={calendarLink}
+                >
+                  add to calendar
+                </Link>
+              </Text>
+            </Section>
           </Section>
         </Container>
       </Body>
@@ -70,15 +91,6 @@ const container = {
   margin: "0 auto",
   padding: "40px 20px",
   maxWidth: "600px",
-}
-
-const imageSection = {
-  textAlign: "center" as const,
-  marginBottom: "32px",
-}
-
-const catImage = {
-  margin: "0 auto",
 }
 
 const content = {
@@ -114,18 +126,60 @@ const invitationImage = {
   border: "1px solid #e5e7eb",
 }
 
-const footer = {
-  fontSize: "16px",
+const detailsContainer = {
+  marginTop: "60px",
+  marginBottom: "20px",
+}
+
+const detailsTable = {
+  width: "100%",
+}
+
+const detailCellLeft = {
+  padding: "20px 10px",
+  verticalAlign: "top" as const,
+  width: "50%",
+  textAlign: "center" as const,
+}
+
+const linkSection = {
+  marginTop: "40px",
+  marginBottom: "40px",
+}
+
+const linkText = {
+  fontSize: "14px",
   fontWeight: "200",
   color: "#6b7280",
-  marginTop: "40px",
   textTransform: "lowercase" as const,
 }
 
-const subFooter = {
-  fontSize: "14px",
+const websiteLink = {
+  color: "#4b5563",
+  textDecoration: "underline",
+}
+
+const footerSection = {
+  marginTop: "60px",
+  textAlign: "center" as const,
+}
+
+const footerDate = {
+  fontSize: "16px",
   fontWeight: "200",
-  color: "#9ca3af",
-  marginTop: "8px",
-  textTransform: "lowercase" as const,
+  color: "#6b7280",
+  marginBottom: "8px",
+  margin: "0 0 8px 0",
+}
+
+const footerCalendar = {
+  fontSize: "16px",
+  fontWeight: "200",
+  color: "#6b7280",
+  margin: "0",
+}
+
+const calendarLink = {
+  color: "#6b7280",
+  textDecoration: "underline",
 }
