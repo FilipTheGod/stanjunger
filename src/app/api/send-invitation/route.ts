@@ -8,6 +8,9 @@ export async function POST(request: Request) {
   try {
     const { to } = await request.json()
 
+    // Sanitize email for tag (replace @ and . with underscores)
+    const sanitizedEmail = to.replace(/[@.]/g, '_')
+
     const { data, error } = await resend.emails.send({
       from: "ines & filip <hello@stanjunger.wedding>",
       to: [to],
@@ -21,7 +24,7 @@ export async function POST(request: Request) {
         },
         {
           name: "recipient",
-          value: to
+          value: sanitizedEmail
         }
       ]
     })
