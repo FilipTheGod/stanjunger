@@ -26,7 +26,7 @@ export default function WeddingInvitation() {
                 <tbody>
                   <tr>
                     <td style={detailCellLeft}>
-                      <Text style={heading}>you've got plans!</Text>
+                      <Text style={heading}>you've got plans :)</Text>
                       <Text style={paragraph}>
                         {" "}
                         we'd love to celebrate our wedding with you! until we
@@ -50,13 +50,12 @@ export default function WeddingInvitation() {
 
             {/* Website Link */}
             <Section style={linkSection}>
-              <Text style={paragraph}>our wedding website is up and running!</Text>
-              <Text style={linkText}>
-                <Link href="https://stanjunger.wedding" style={websiteLink}>
+              <Text style={paragraph}>our wedding website is up and running!
+                      <br />
+                <Link href="https://stanjunger.wedding" style={linkText}>
                   stanjunger.wedding
                 </Link>
-              </Text>
-               <Text style={paragraph}>
+                <br />
               feel free to check back in the coming months for updates and
               information.
             </Text>
@@ -64,11 +63,11 @@ export default function WeddingInvitation() {
 
             {/* Footer with Date and Calendar */}
             <Section style={footerSection}>
-              <Text style={footerDate}>saturday, august 29, 2026</Text>
-              <Text style={footerCalendar}>
-                <Link
+              <Text style={footerDate}>saturday, august 29, 2026
+                <br />
+                 <Link
                   href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=stan-junger+wedding&dates=20260829/20260830&&location=Prod%2C+Romania"
-                  style={calendarLink}
+                  style={linkText}
                 >
                   add to calendar
                 </Link>
@@ -89,7 +88,7 @@ const main = {
 
 const container = {
   margin: "0 auto",
-  padding: "40px 20px",
+  padding: "0px 20px",
   maxWidth: "600px",
 }
 
@@ -98,24 +97,26 @@ const content = {
 }
 
 const heading = {
-  fontSize: "28px",
+ fontSize: "16px",
   fontWeight: "200",
-  color: "#4b5563",
-  marginBottom: "24px",
+  color: "#000000",
+  marginTop: "0px",
+  marginBottom: "50px",
   textTransform: "lowercase" as const,
 }
 
 const paragraph = {
   fontSize: "16px",
   fontWeight: "200",
-  color: "#6b7280",
+  color: "#000000",
   lineHeight: "1.6",
   marginBottom: "20px",
   textTransform: "lowercase" as const,
 }
 
 const invitationSection = {
-  margin: "32px 0",
+  margin: "10px 0",
+  marginTop: "60px",
   textAlign: "center" as const,
 }
 
@@ -127,7 +128,7 @@ const invitationImage = {
 }
 
 const detailsContainer = {
-  marginTop: "60px",
+  marginTop: "20px",
   marginBottom: "20px",
 }
 
@@ -136,7 +137,6 @@ const detailsTable = {
 }
 
 const detailCellLeft = {
-  padding: "20px 10px",
   verticalAlign: "top" as const,
   width: "50%",
   textAlign: "center" as const,
@@ -152,15 +152,12 @@ const linkText = {
   fontWeight: "200",
   color: "#6b7280",
   textTransform: "lowercase" as const,
-}
-
-const websiteLink = {
-  color: "#4b5563",
   textDecoration: "underline",
 }
 
+
 const footerSection = {
-  marginTop: "60px",
+  marginTop: "30px",
   textAlign: "center" as const,
 }
 
@@ -168,18 +165,5 @@ const footerDate = {
   fontSize: "16px",
   fontWeight: "200",
   color: "#6b7280",
-  marginBottom: "8px",
-  margin: "0 0 8px 0",
-}
 
-const footerCalendar = {
-  fontSize: "16px",
-  fontWeight: "200",
-  color: "#6b7280",
-  margin: "0",
-}
-
-const calendarLink = {
-  color: "#6b7280",
-  textDecoration: "underline",
 }

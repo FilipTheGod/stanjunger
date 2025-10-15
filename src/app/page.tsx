@@ -22,7 +22,7 @@ export default function Home() {
           </div>
 
           {/* Body text */}
-          <div className="space-y-8 md:space-y-8 text-gray-600 lowercase">
+          <div className="space-y-8 pb-32 md:space-y-8 text-black lowercase">
             <p className="text-base md:text-lg leading-relaxed px-4 md:px-0">
               welcome to our wedding website!
             </p>
