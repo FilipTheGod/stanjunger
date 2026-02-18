@@ -15,9 +15,10 @@ export default function WeddingInvitation() {
       <Body style={main}>
         <Container style={container}>
           <Section style={content}>
-             <Text style={paragraph}>
-              hi friends,
+            <Text style={resendNote}>
+              (resent because of wrong subject line, oops!)
             </Text>
+
             <Text style={paragraph}>
               we're becoming increasingly aware that, due to the unpredictable timing of our legal immigration process, there is a chance we may not be able to travel as planned by the time of our wedding. at this point, we're not making any changes to our date, but we ask that you hold off on booking flights or making firm travel plans until late spring, when we hope to have more clarity.
             </Text>
@@ -31,13 +32,12 @@ export default function WeddingInvitation() {
             </Text>
 
             <Text style={signature}>
-              – ines & filip
+              ines & filip
             </Text>
           </Section>
         </Container>
       </Body>
     </Html>
-    
   )
 }
 
@@ -55,6 +55,15 @@ const container = {
 
 const content = {
   textAlign: "left" as const,
+}
+
+const resendNote = {
+  fontSize: "12px",
+  fontWeight: "600",
+  color: "#6b7280",
+  lineHeight: "1.5",
+  marginBottom: "32px",
+  textTransform: "lowercase" as const,
 }
 
 const paragraph = {
