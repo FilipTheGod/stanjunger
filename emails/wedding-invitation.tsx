@@ -19,6 +19,10 @@ export default function WeddingInvitation() {
               (resent because of wrong subject line, oops!)
             </Text>
 
+            <Text style={greeting}>
+              hi friends,
+            </Text>
+
             <Text style={paragraph}>
               we're becoming increasingly aware that, due to the unpredictable timing of our legal immigration process, there is a chance we may not be able to travel as planned by the time of our wedding. at this point, we're not making any changes to our date, but we ask that you hold off on booking flights or making firm travel plans until late spring, when we hope to have more clarity.
             </Text>
@@ -62,7 +66,16 @@ const resendNote = {
   fontWeight: "600",
   color: "#6b7280",
   lineHeight: "1.5",
-  marginBottom: "32px",
+  marginBottom: "24px",
+  textTransform: "lowercase" as const,
+}
+
+const greeting = {
+  fontSize: "16px",
+  fontWeight: "300",
+  color: "#000000",
+  lineHeight: "1.7",
+  marginBottom: "24px",
   textTransform: "lowercase" as const,
 }
 
