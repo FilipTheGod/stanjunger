@@ -15,34 +15,36 @@ export default function WeddingInvitation() {
       <Body style={main}>
         <Container style={container}>
           <Section style={content}>
-            <Text style={greeting}>
-              hi friends,
+            <Text style={greeting}>hi friends,</Text>
+            <Text style={paragraph}>
+              as you know, we’re currently in somewhat of a logistical pickle
+              that is interfering with our wedding plans. we’re back with an
+              update:
             </Text>
             <Text style={paragraph}>
-              we have an update to share: our wedding will be moving to may 2027.
+              our wedding celebration will be moving to spring/summer of 2027!
             </Text>
             <Text style={paragraph}>
-              everything is okay! we promise.
+              it seems like the both of us will remain very restricted in terms
+              of travel ability for the next year or so, which is longer than we
+              had anticipated. initially, it was upsetting to realize that
+              postponing the party is now our only option, but we’re actually
+              becoming very enthusiastic about the fact that we’ll be able to
+              plan freely for the new date, without being on a time crunch.
+              we’re also glad we figured things out early enough to not mess up
+              any of your plans :)
             </Text>
             <Text style={paragraph}>
-              after everything we've gone through with our immigration process, we decided that when our wedding day comes, we want it to feel exactly like it should: happy, relaxed, and free from any stress.
+              we expect to settle on and announce the new date around this
+              coming fall.
             </Text>
             <Text style={paragraph}>
-              pushing the date back by a year gives us the time to make sure that's the case.
-            </Text>
-            <Text style={paragraph}>
-              we are so grateful for your patience and understanding through all of this.
-            </Text>
-            <Text style={paragraph}>
-              we'll be back with a new date and updated details as soon as we have them.
-            </Text>
-            <Text style={paragraph}>
-              in the meantime, please hold off on any travel bookings around that time :)
-            </Text>
-            <Text style={paragraph}>
-              thank you for everything, we love you.
+              thank you for the support, patience and kindness we’ve received
+              while stressing about this decision in the past months!
             </Text>
             <Text style={signature}>
+              with love,
+              <br />
               ines & filip
             </Text>
           </Section>

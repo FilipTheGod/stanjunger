@@ -14,7 +14,7 @@ export async function POST(request: Request) {
     const { data, error } = await resend.emails.send({
       from: "ines & filip <hello@stanjunger.wedding>",
       to: [to],
-      subject: "a little update from us",
+      subject: "important: change of plans",
       react: WeddingInvitation(),
       // Enable open tracking with tags
       tags: [
