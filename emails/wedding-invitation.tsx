@@ -7,6 +7,7 @@ import {
   Text,
 } from "@react-email/components"
 import * as React from "react"
+import { text } from "stream/consumers"
 
 export default function WeddingInvitation() {
   return (
@@ -16,12 +17,12 @@ export default function WeddingInvitation() {
         <Container style={container}>
           <Section style={content}>
             <Text style={greeting}>hi friends,</Text>
-            <Text style={paragraph}>
+            <Text style={paragraph} >
               as you know, we’re currently in somewhat of a logistical pickle
               that is interfering with our wedding plans. we’re back with an
               update:
             </Text>
-            <Text style={paragraph}>
+            <Text style={paragraph2}>
               our wedding celebration will be moving to spring/summer of 2027!
             </Text>
             <Text style={paragraph}>
@@ -75,7 +76,7 @@ const resendNote = {
   fontWeight: "600",
   color: "#6b7280",
   lineHeight: "1.5",
-  marginBottom: "24px",
+  marginBottom: "20px",
   textTransform: "lowercase" as const,
 }
 
@@ -84,7 +85,7 @@ const greeting = {
   fontWeight: "300",
   color: "#000000",
   lineHeight: "1.7",
-  marginBottom: "24px",
+  marginBottom: "20px",
   textTransform: "lowercase" as const,
 }
 
@@ -93,9 +94,21 @@ const paragraph = {
   fontWeight: "300",
   color: "#000000",
   lineHeight: "1.7",
-  marginBottom: "24px",
+  marginBottom: "20px",
   textTransform: "lowercase" as const,
 }
+
+const paragraph2 = {
+  fontSize: "16px",
+  fontWeight: "bold",
+  color: "#000000",
+  lineHeight: "1.7",
+  marginTop: "40px",
+  marginBottom: "40px",
+  textTransform: "lowercase" as const,
+  textAlign: "center" as const,
+}
+
 
 const signature = {
   fontSize: "16px",
