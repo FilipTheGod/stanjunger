@@ -15,26 +15,33 @@ export default function WeddingInvitation() {
       <Body style={main}>
         <Container style={container}>
           <Section style={content}>
-            <Text style={resendNote}>
-              (resent because of wrong subject line, oops!)
-            </Text>
-
             <Text style={greeting}>
               hi friends,
             </Text>
-
             <Text style={paragraph}>
-              we're becoming increasingly aware that, due to the unpredictable timing of our legal immigration process, there is a chance we may not be able to travel as planned by the time of our wedding. at this point, we're not making any changes to our date, but we ask that you hold off on booking flights or making firm travel plans until late spring, when we hope to have more clarity.
+              we have an update to share: our wedding will be moving to may 2027.
             </Text>
-
             <Text style={paragraph}>
-              we know many of you would be traveling a long way for this, and we're truly sorry to ask you to wait. the delays we're facing are outside of our control, but celebrating with you means the world to us, so we want to make sure we can do that without uncertainty hanging over it.
+              everything is okay! we promise.
             </Text>
-
             <Text style={paragraph}>
-              we promise to keep you updated and will share more news as soon as we can.
+              after everything we've gone through with our immigration process, we decided that when our wedding day comes, we want it to feel exactly like it should: happy, relaxed, and free from any stress.
             </Text>
-
+            <Text style={paragraph}>
+              pushing the date back by a year gives us the time to make sure that's the case.
+            </Text>
+            <Text style={paragraph}>
+              we are so grateful for your patience and understanding through all of this.
+            </Text>
+            <Text style={paragraph}>
+              we'll be back with a new date and updated details as soon as we have them.
+            </Text>
+            <Text style={paragraph}>
+              in the meantime, please hold off on any travel bookings around that time :)
+            </Text>
+            <Text style={paragraph}>
+              thank you for everything, we love you.
+            </Text>
             <Text style={signature}>
               ines & filip
             </Text>
