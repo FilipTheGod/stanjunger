@@ -8,19 +8,30 @@ export default function SendBulkPage() {
   const [loading, setLoading] = useState(false);
   const [results, setResults] = useState<any[]>([]);
 
-  const sendBulkEmails = async () => {  
+  // Split by newline, comma or semicolon, and dedupe (case-insensitive)
+  const emailList = [
+    ...new Map(
+      emails
+        .split(/[\n,;]/)
+        .map(e => e.trim())
+        .filter(e => e.length > 0)
+        .map(e => [e.toLowerCase(), e])
+    ).values(),
+  ];
+
+  const sendBulkEmails = async () => {
     setLoading(true);
     setStatus('sending emails...');
     setResults([]);
 
-    // Split emails by newline or comma
-    const emailList = emails
-      .split(/[\n,]/)
-      .map(e => e.trim())
-      .filter(e => e.length > 0);
-
     if (emailList.length === 0) {
       setStatus('❌ please enter at least one email address');
+      setLoading(false);
+      return;
+    }
+
+    if (!window.confirm(`send the email to ${emailList.length} people? this can't be undone.`)) {
+      setStatus('');
       setLoading(false);
       return;
     }
@@ -68,7 +79,7 @@ export default function SendBulkPage() {
               placeholder="email1@example.com&#10;email2@example.com&#10;email3@example.com"
             />
             <p className="text-xs text-gray-500 mt-1 lowercase">
-              {emails.split(/[\n,]/).filter(e => e.trim().length > 0).length} email(s) to send
+              {emailList.length} unique email(s) to send
             </p>
           </div>
 
@@ -92,7 +103,7 @@ export default function SendBulkPage() {
                   <div key={index} className="flex items-center justify-between text-sm">
                     <span className="text-gray-600 font-mono">{result.email}</span>
                     <span className={result.success ? 'text-green-600' : 'text-red-600'}>
-                      {result.success ? '✅ sent' : '❌ failed'}
+                      {result.success ? '✅ sent' : `❌ ${result.error ?? 'failed'}`}
                     </span>
                   </div>
                 ))}

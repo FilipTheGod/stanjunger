@@ -1,6 +1,6 @@
-import WeddingInvitation from "../../../../emails/wedding-invitation"
 import { Resend } from "resend"
 import { NextResponse } from "next/server"
+import { FROM, REPLY_TO, SUBJECT, isValidEmail, renderInvitation } from "@/lib/email"
 
 const resend = new Resend(process.env.RESEND_API_KEY)
 
@@ -8,25 +8,20 @@ export async function POST(request: Request) {
   try {
     const { to } = await request.json()
 
-    // Sanitize email for tag (replace @ and . with underscores)
-    const sanitizedEmail = to.replace(/[@.]/g, '_')
+    if (typeof to !== "string" || !isValidEmail(to.trim())) {
+      return NextResponse.json({ error: { message: "invalid email address" } }, { status: 400 })
+    }
+
+    const { html, text } = await renderInvitation()
 
     const { data, error } = await resend.emails.send({
-      from: "ines & filip <hello@stanjunger.wedding>",
-      to: [to],
-      subject: "important: change of plans",
-      react: WeddingInvitation(),
-      // Enable open tracking with tags
-      tags: [
-        {
-          name: "category",
-          value: "wedding_invitation"
-        },
-        {
-          name: "recipient",
-          value: sanitizedEmail
-        }
-      ]
+      from: FROM,
+      to: [to.trim()],
+      replyTo: REPLY_TO,
+      subject: SUBJECT,
+      html,
+      text,
+      tags: [{ name: "category", value: "test" }],
     })
 
     if (error) {
@@ -35,6 +30,6 @@ export async function POST(request: Request) {
 
     return NextResponse.json({ data })
   } catch (error) {
-    return NextResponse.json({ error }, { status: 500 })
+    return NextResponse.json({ error: { message: String(error) } }, { status: 500 })
   }
 }

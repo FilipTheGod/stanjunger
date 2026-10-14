@@ -7,7 +7,6 @@ import {
   Text,
 } from "@react-email/components"
 import * as React from "react"
-import { text } from "stream/consumers"
 
 export default function WeddingInvitation() {
   return (
@@ -17,7 +16,7 @@ export default function WeddingInvitation() {
         <Container style={container}>
           <Section style={content}>
             <Text style={greeting}>hi friends,</Text>
-            <Text style={paragraph} >
+            <Text style={paragraph}>
               as you know, we’re currently in somewhat of a logistical pickle
               that is interfering with our wedding plans. we’re back with an
               update:
@@ -69,15 +68,6 @@ const container = {
 
 const content = {
   textAlign: "left" as const,
-}
-
-const resendNote = {
-  fontSize: "12px",
-  fontWeight: "600",
-  color: "#6b7280",
-  lineHeight: "1.5",
-  marginBottom: "20px",
-  textTransform: "lowercase" as const,
 }
 
 const greeting = {
