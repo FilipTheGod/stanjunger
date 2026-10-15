@@ -3,7 +3,7 @@ import WeddingInvitation from "../../emails/wedding-invitation"
 
 // Shared settings for every email we send, so the test and bulk routes can't drift apart.
 export const FROM = "ines & filip <hello@stanjunger.wedding>"
-export const SUBJECT = "one ceremony down"
+export const SUBJECT = "one ceremony down!"
 
 // stanjunger.wedding has no inbox (no MX record), so replies to hello@ bounce.
 // Set REPLY_TO_EMAIL in .env.local so guests' replies reach a real inbox.

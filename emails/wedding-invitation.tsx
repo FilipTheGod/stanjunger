@@ -29,17 +29,17 @@ export default function WeddingInvitation() {
             <Img
               src={`${baseUrl}/email/cat.jpg`}
               alt="dancing cat"
-              width="64"
-              height="90"
+              width="48"
+              height="68"
               style={cat}
             />
             <Section style={content}>
               <Text style={greeting}>hi friends,</Text>
               <Text style={paragraph}>
                 on the 2nd of october, we had our civil ceremony here in new
-                york. some of you were able to join us on short notice, but we
-                wanted to send this little note to share the happy news with
-                everyone.
+                york. much to our joy, quite a few of you were able to join us
+                on short notice, but we wanted to send this little note to
+                share the happy news with everyone else, too.
               </Text>
               <Img
                 src={`${baseUrl}/email/wedding.jpg`}
@@ -48,9 +48,9 @@ export default function WeddingInvitation() {
                 style={photo}
               />
               <Text style={paragraph}>
-                we’re still waiting to sort a few boring things before we’re
-                clear to start planning the main event in romania, but should
-                have an update sometime soon.
+                we’re still waiting for a few things to fall into place before
+                we can start planning the main event in romania, but we’ll keep
+                you posted as soon as we know more.
               </Text>
               <Text style={signature}>
                 with love,
@@ -98,13 +98,12 @@ const content = {
 const photo = {
   width: "100%",
   maxWidth: "536px",
-  height: "auto",
   display: "block",
   margin: "32px auto",
 }
 
 const greeting = {
-  fontSize: "16px",
+  fontSize: "15px",
   fontWeight: "300",
   color: "#000000",
   lineHeight: "1.7",
@@ -113,7 +112,7 @@ const greeting = {
 }
 
 const paragraph = {
-  fontSize: "16px",
+  fontSize: "15px",
   fontWeight: "300",
   color: "#000000",
   lineHeight: "1.7",
@@ -122,7 +121,7 @@ const paragraph = {
 }
 
 const signature = {
-  fontSize: "16px",
+  fontSize: "15px",
   fontWeight: "300",
   color: "#000000",
   lineHeight: "1.7",
