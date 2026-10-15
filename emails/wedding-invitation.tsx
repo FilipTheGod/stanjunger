@@ -3,44 +3,50 @@ import {
   Container,
   Head,
   Html,
+  Img,
+  Preview,
   Section,
   Text,
 } from "@react-email/components"
 import * as React from "react"
 
+// Images load from the live site (public/email/), because guests open the email on
+// their own devices. New or changed images must be deployed before sending.
+const baseUrl = "https://www.stanjunger.wedding"
+
 export default function WeddingInvitation() {
   return (
     <Html>
       <Head />
+      <Preview>surprise, we’re married!</Preview>
       <Body style={main}>
         <Container style={container}>
+          <Img
+            src={`${baseUrl}/email/cat.jpg`}
+            alt="dancing cat"
+            width="64"
+            height="90"
+            style={cat}
+          />
           <Section style={content}>
             <Text style={greeting}>hi friends,</Text>
+            <Text style={paragraph}>surprise, we’re married!</Text>
             <Text style={paragraph}>
-              as you know, we’re currently in somewhat of a logistical pickle
-              that is interfering with our wedding plans. we’re back with an
-              update:
+              on the 2nd of october, we had our civil ceremony here in new
+              york. some of you were able to join us on short notice, but we
+              wanted to send this little note to share the happy news with
+              everyone.
             </Text>
-            <Text style={paragraph2}>
-              our wedding celebration will be moving to spring/summer of 2027!
-            </Text>
+            <Img
+              src={`${baseUrl}/email/wedding.jpg`}
+              alt="ines and filip on their wedding day"
+              width="560"
+              style={photo}
+            />
             <Text style={paragraph}>
-              it seems like the both of us will remain very restricted in terms
-              of travel ability for the next year or so, which is longer than we
-              had anticipated. initially, it was upsetting to realize that
-              postponing the party is now our only option, but we’re actually
-              becoming very enthusiastic about the fact that we’ll be able to
-              plan freely for the new date, without being on a time crunch.
-              we’re also glad we figured things out early enough to not mess up
-              any of your plans :)
-            </Text>
-            <Text style={paragraph}>
-              we expect to settle on and announce the new date around this
-              coming fall.
-            </Text>
-            <Text style={paragraph}>
-              thank you for the support, patience and kindness we’ve received
-              while stressing about this decision in the past months!
+              we’re still waiting to sort a few boring things before we’re
+              clear to start planning the main event in romania, but should
+              have an update sometime soon.
             </Text>
             <Text style={signature}>
               with love,
@@ -66,8 +72,21 @@ const container = {
   maxWidth: "600px",
 }
 
+const cat = {
+  margin: "0 auto 40px",
+  display: "block",
+}
+
 const content = {
   textAlign: "left" as const,
+}
+
+const photo = {
+  width: "100%",
+  maxWidth: "560px",
+  height: "auto",
+  display: "block",
+  margin: "32px auto",
 }
 
 const greeting = {
@@ -87,18 +106,6 @@ const paragraph = {
   marginBottom: "20px",
   textTransform: "lowercase" as const,
 }
-
-const paragraph2 = {
-  fontSize: "16px",
-  fontWeight: "bold",
-  color: "#000000",
-  lineHeight: "1.7",
-  marginTop: "40px",
-  marginBottom: "40px",
-  textTransform: "lowercase" as const,
-  textAlign: "center" as const,
-}
-
 
 const signature = {
   fontSize: "16px",
