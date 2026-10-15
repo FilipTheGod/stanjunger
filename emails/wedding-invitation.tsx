@@ -21,11 +21,12 @@ export default function WeddingInvitation() {
       <Preview>surprise, we’re married!</Preview>
       <Body style={main}>
         <Container style={container}>
+          {/* Transparent PNG (Gmail blocks SVG) with a thin white halo so it stays visible in dark mode */}
           <Img
-            src={`${baseUrl}/email/cat.jpg`}
+            src={`${baseUrl}/email/cat.png`}
             alt="dancing cat"
             width="64"
-            height="90"
+            height="91"
             style={cat}
           />
           <Section style={content}>
